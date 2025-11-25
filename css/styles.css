@@ -1,0 +1,612 @@
+body {
+    color: #262626;
+    font-family: "Inter", sans-serif;
+    font-size: 12pt;
+    font-weight: 500;
+
+    background-color: #3f5139;
+    background-image: url("../assets/grass_field.jpg");
+    background-size: 525px 1000px;
+    background-blend-mode: lighten;
+}
+
+header, footer {
+    background-color: #F5F5F5;
+    padding: 5%;
+}
+
+header {
+    text-align: center;
+}
+
+header >* {
+    margin: 15px;
+}
+
+footer {
+    display: none;
+}
+
+h1 {
+    font-family: "Jua", sans-serif;
+    text-transform: uppercase;
+    font-size: 20pt;
+    margin: 5px;
+}
+
+a {
+    color: #483BA5;
+}
+
+.audioSection {
+    display: none;
+}
+
+.rectButton {
+    font-family: "Inter", sans-serif;
+    font-size: 12pt;
+    font-weight: 500;
+
+    background-color: #F5F5F5;
+    background-image: linear-gradient(#E9F3D8 0%, #F5F5F5 50%);
+    border: 1.5px solid #000000;
+    border-radius: 8px;
+    
+    padding: 12px;
+    margin: 14px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Toggle (.switch classes) modified from W3Schools,
+https://www.w3schools.com/howto/howto_css_switch.asp on 11 November 2025 */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 12px;
+}
+
+.switch:focus-within {
+    border: 2px solid red;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The inner slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #477A24;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #477A24;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Apply to an overlay over body when initial popup appears to blur elements under */
+.backgroundFilter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(152, 155, 108, 0.4);
+    /* -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); */
+}
+
+/* ////////////////////////////// CREATURES ////////////////////////////// */
+
+.creatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    margin: 24px;
+}
+
+.creatureKey {
+    position: relative;
+    top: 20%;
+    right: 30%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+    background-color: #F5F5F5;
+    border: 1.5px solid rgb(49, 49, 49);
+    border-radius: 8px;
+    transform: rotate(-5deg);
+}
+
+.creature1, .creature2, .creature3, .creature4, .creature5, .creature6, .creature7, .creature8 {
+    height: 80px;
+    width: 80px;
+    background-color: #F5F5F5;
+    background-image: linear-gradient(#bbdf7e 0%, #F5F5F5 30%);
+    border-radius: 50% 50% 25% 25%;
+    border-color: rgb(255, 192, 203, 0);
+}
+
+.creatures button:focus {
+    background: #eeff83;
+}
+
+.creature7, .creature8 {
+    display: none;
+}
+
+.creature1 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.creature1 span.eyeL {
+    position: relative;
+    display: block;
+    top: 15px;
+    left: 45%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature1 span.eyeR {
+    position: relative;
+    display: block;
+    top: 5px;
+    left: 65%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature1 span.mouth {
+    position: relative;
+    display: block;
+    top: 10px;
+    left: 60%;
+    width: 20px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature2 {
+    grid-column: 1;
+    grid-row: 2;
+    width: 65px;
+    height: 65px;
+}
+
+.creature2 span.eyeL {
+    position: relative;
+    display: block;
+    top: 25px;
+    left: 55%;
+    width: 4px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature2 span.eyeR {
+    position: relative;
+    display: block;
+    top: 15px;
+    left: 85%;
+    width: 4px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature2 span.mouth {
+    position: relative;
+    display: block;
+    top: 20px;
+    left: 67%;
+    width: 12px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature3 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+.creature3 span.eyeL {
+    position: relative;
+    display: block;
+    top: 15px;
+    left: 25%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature3 span.eyeR {
+    position: relative;
+    display: block;
+    top: 5px;
+    left: 55%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature3 span.mouth {
+    position: relative;
+    display: block;
+    top: 15px;
+    left: 40%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature4 {
+    grid-column: 2;
+    grid-row: 3;
+
+    width: 95px;
+    height: 95px;
+
+    border-radius: 50% 50% 30% 30%;
+}
+
+.creature4 span.eyeL {
+    position: relative;
+    display: block;
+    top: 15px;
+    left: 55%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature4 span.eyeR {
+    position: relative;
+    display: block;
+    top: 8px;
+    left: 70%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature4 span.mouth {
+    position: relative;
+    display: block;
+    top: 12px;
+    left: 63%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature5 {
+    grid-column: 5;
+    grid-row: 4;
+}
+
+.creature5 span.eyeL {
+    position: relative;
+    display: block;
+    top: 15px;
+    left: 15%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature5 span.eyeR {
+    position: relative;
+    display: block;
+    top: 5px;
+    left: 55%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature5 span.mouth {
+    position: relative;
+    display: block;
+    top: 10px;
+    left: 25%;
+    width: 10px;
+    height: 15px;
+    border-radius: 2% 2% 50% 50%;
+    background-color: #000000;
+}
+
+.creature6 {
+    grid-column: 3;
+    grid-row: 5;
+}
+
+.creature6 span.eyeL {
+    position: relative;
+    display: block;
+    top: 45px;
+    left: 55%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature6 span.eyeR {
+    position: relative;
+    display: block;
+    top: 35px;
+    left: 85%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature6 span.mouth {
+    position: relative;
+    display: block;
+    top: 10px;
+    left: 67%;
+    width: 15px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature7 {
+    grid-column: 4;
+    grid-row: 4;
+}
+
+.creature7 span.eyeL {
+    position: relative;
+    display: block;
+    top: 15px;
+    left: 55%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature7 span.eyeR {
+    position: relative;
+    display: block;
+    top: 5px;
+    left: 75%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature7 span.mouth {
+    position: relative;
+    display: block;
+    top: 20px;
+    left: 67%;
+    width: 10px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature8 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.creature8 span.eyeL {
+    position: relative;
+    display: block;
+    top: 15px;
+    left: 15%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature8 span.eyeR {
+    position: relative;
+    display: block;
+    top: 5px;
+    left: 65%;
+    width: 5px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.creature8 span.mouth {
+    position: relative;
+    display: block;
+    top: 10px;
+    left: 25%;
+    width: 25px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+/* ////////////////////////////// ANIMATIONS ////////////////////////////// */
+
+.creatureAnimation {
+    animation-name: animA;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+}
+
+.creatureAnimationB {
+    animation-name: animB;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes animA {
+    0% {transform: scale(0.95);}
+    10% {transform: scale(1.25);}
+    100% {transform: scale(1);}
+}
+
+@keyframes animB {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(0);}
+}
+
+@media screen and (min-width: 750px) {
+
+    body {
+        background-size: cover;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    header >* {
+        margin: 5px;
+    }
+
+    footer {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        margin: 0;
+        line-height: normal;
+    }
+
+    .creatures {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .creature1, .creature2, .creature3, .creature4, .creature5, .creature6, .creature7, .creature8 {
+        margin-bottom: 40px;
+    }
+
+    .creature7, .creature8 {
+        display: block;
+    }
+
+    .creature1 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .creature2 {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .creature3 {
+        grid-column: 4;
+        grid-row: 1;
+    }
+
+    .creature4 {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .creature5 {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .creature6 {
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+    .creature7 {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .creature8 {
+        grid-column: 4;
+        grid-row: 3;
+    }
+    
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .creatureAnimation {
+        animation-name: animB;
+    }
+}
